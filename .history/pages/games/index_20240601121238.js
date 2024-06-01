@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useRouter } from 'next/router'; // Corrected import
+import { useRouter } from 'next/router';
 import GameCard from '../../components/GameCard';
 import { getGames } from '../../utils/data/gameData';
+import GameForm from '../../components/GameForm'; // Import GameForm component
 
 function Home() {
   const [games, setGames] = useState([]);
-  const router = useRouter(); // Use useRouter hook
+  const router = useRouter();
 
   useEffect(() => {
     getGames().then((data) => setGames(data));
@@ -33,6 +34,7 @@ function Home() {
           />
         </section>
       ))}
+      <GameForm user={user} /> // Pass the user prop to the GameForm component
     </article>
   );
 }

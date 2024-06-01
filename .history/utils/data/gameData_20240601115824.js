@@ -7,13 +7,6 @@ const getGames = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getGameById = (id) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/games/${id}`)
-    .then((response) => response.json())
-    .then(resolve)
-    .catch(reject);
-});
-
 const createGame = (game) => new Promise((resolve, reject) => {
   fetch(`${clientCredentials.databaseURL}/games`, {
     method: 'POST',
@@ -55,5 +48,5 @@ const updateGame = (id, gameData) => new Promise((resolve, reject) => {
 });
 
 export {
-  getGames, createGame, getGameTypes, updateGame, getGameById,
+  getGames, createGame, getGameTypes, updateGame,
 };

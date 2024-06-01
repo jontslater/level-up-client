@@ -25,7 +25,6 @@ function Home() {
       {games.map((game) => (
         <section key={`game--${game.id}`} className="game">
           <GameCard
-            id={game.id}
             title={game.title}
             maker={game.maker}
             numberOfPlayers={game.number_of_players}

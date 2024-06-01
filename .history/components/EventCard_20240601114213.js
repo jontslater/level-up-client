@@ -9,6 +9,7 @@ const EventCard = ({
   date,
   time,
   organizer,
+  gameType,
   playersCount,
 }) => (
   <Card className="text-center">
@@ -21,6 +22,7 @@ const EventCard = ({
       <Card.Text>Maker: {game.maker}</Card.Text>
       <Card.Text>Number of Players: {game.number_of_players}</Card.Text>
       <Card.Text>Skill Level: {game.skill_level}</Card.Text>
+      <Card.Text>Game Type: {game.game_type.label}</Card.Text>
       <Card.Text>Number of Players: {playersCount}</Card.Text>
       <Link href={`/posts/edit/${game.id}`} passHref>
         <Button id="editButton" variant="info">EDIT</Button>
@@ -47,6 +49,7 @@ EventCard.propTypes = {
     uid: PropTypes.string.isRequired,
     bio: PropTypes.string.isRequired,
   }).isRequired,
+  gameType: PropTypes.string.isRequired,
   playersCount: PropTypes.number.isRequired,
 };
 

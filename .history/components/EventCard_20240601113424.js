@@ -4,26 +4,25 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 const EventCard = ({
-  game,
   description,
   date,
   time,
   organizer,
+  gameType,
   playersCount,
 }) => (
   <Card className="text-center">
     <Card.Body>
-      <Card.Text>Organizer: {organizer.uid}</Card.Text>
+      <Card.Text>Organizer: {organizer}</Card.Text>
       <Card.Text>Description: {description}</Card.Text>
       <Card.Text>Date: {date}</Card.Text>
       <Card.Text>Time: {time}</Card.Text>
-      <Card.Text>Game Title: {game.title}</Card.Text>
-      <Card.Text>Maker: {game.maker}</Card.Text>
-      <Card.Text>Number of Players: {game.number_of_players}</Card.Text>
-      <Card.Text>Skill Level: {game.skill_level}</Card.Text>
+      <Card.Text>Game Type: {gameType}</Card.Text>
       <Card.Text>Number of Players: {playersCount}</Card.Text>
-      <Link href={`/posts/edit/${game.id}`} passHref>
-        <Button id="editButton" variant="info">EDIT</Button>
+      <Link href={`/posts/edit/${postObj.id}`} passHref>
+              <Button id="editButton" variant="info">EDIT</Button>
+            </Link>
+        <Button variant="warning" className="action-button">EDIT</Button>
       </Link>
     </Card.Body>
   </Card>
@@ -31,7 +30,6 @@ const EventCard = ({
 
 EventCard.propTypes = {
   game: PropTypes.shape({
-    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     maker: PropTypes.string.isRequired,
     number_of_players: PropTypes.number.isRequired,
@@ -47,6 +45,7 @@ EventCard.propTypes = {
     uid: PropTypes.string.isRequired,
     bio: PropTypes.string.isRequired,
   }).isRequired,
+  gameType: PropTypes.string.isRequired,
   playersCount: PropTypes.number.isRequired,
 };
 

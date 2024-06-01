@@ -17,7 +17,7 @@ const GameCard = ({
       <Card.Text>{numberOfPlayers} players needed</Card.Text>
     </Card.Body>
     <Card.Footer className="text-muted">Skill Level: {skillLevel}</Card.Footer>
-    <Link href={`/games/edit/${id}`} passHref>
+    <Link href={`/posts/edit/${id}`} passHref>
       <Button id="editButton" variant="info">EDIT</Button>
     </Link>
   </Card>

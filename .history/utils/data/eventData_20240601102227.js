@@ -8,7 +8,7 @@ const getEvents = () => new Promise((resolve, reject) => {
 });
 
 const createEvent = (event) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/events`, {
+  fetch(`${clientCredentials.databaseURL}/event`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

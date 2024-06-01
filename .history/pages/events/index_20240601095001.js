@@ -6,7 +6,6 @@ import { getEvents } from '../../utils/data/eventData';
 
 function Home() {
   const [events, setEvents] = useState([]);
-  const router = useRouter(); // Define the router variable
 
   useEffect(() => {
     getEvents().then((data) => setEvents(data));
@@ -17,10 +16,10 @@ function Home() {
       <h1>Events</h1>
       <Button
         onClick={() => {
-          router.push('/events/new');
+          router.push('/games/new');
         }}
       >
-        Register New Event
+        Register New Game
       </Button>
       {events.map((event) => (
         <section key={`event--${event.id}`} className="event">

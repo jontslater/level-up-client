@@ -21,6 +21,7 @@ const EventCard = ({
       <Card.Text>Maker: {game.maker}</Card.Text>
       <Card.Text>Number of Players: {game.number_of_players}</Card.Text>
       <Card.Text>Skill Level: {game.skill_level}</Card.Text>
+      <Card.Text>Game Type: {game.game_type.label}</Card.Text>
       <Card.Text>Number of Players: {playersCount}</Card.Text>
       <Link href={`/posts/edit/${game.id}`} passHref>
         <Button id="editButton" variant="info">EDIT</Button>

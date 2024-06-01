@@ -7,13 +7,6 @@ const getGames = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getGameById = (id) => new Promise((resolve, reject) => {
-  fetch(`${clientCredentials.databaseURL}/games/${id}`)
-    .then((response) => response.json())
-    .then(resolve)
-    .catch(reject);
-});
-
 const createGame = (game) => new Promise((resolve, reject) => {
   fetch(`${clientCredentials.databaseURL}/games`, {
     method: 'POST',
@@ -36,7 +29,7 @@ const getGameTypes = () => new Promise((resolve, reject) => {
 
 const updateGame = (id, gameData) => new Promise((resolve, reject) => {
   // Perform the update operation, for example, using fetch
-  fetch(`${clientCredentials.databaseURL}/games/${id}`, {
+  fetch(`/api/games/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -54,6 +47,6 @@ const updateGame = (id, gameData) => new Promise((resolve, reject) => {
     });
 });
 
-export {
-  getGames, createGame, getGameTypes, updateGame, getGameById,
-};
+export { getGames, createGame, getGameTypes };
+
+// eslint-disable-next-line import/prefer-default-export
